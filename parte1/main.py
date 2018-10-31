@@ -26,7 +26,7 @@ app = Flask(__name__)
 def hello():
     """Return a friendly HTTP greeting."""
 
-    return 'Hello World !'
+    return 'Hello World !!'
 
 
 if __name__ == '__main__':
