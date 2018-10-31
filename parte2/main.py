@@ -15,6 +15,11 @@
 # [START gae_python37_app]
 from flask import Flask
 from flask import request
+from google.cloud import datastore
+
+
+def create_client(project_id):
+    return datastore.Client(project_id)
 
 
 # If `entrypoint` is not defined in app.yaml, App Engine will look for an app
@@ -27,7 +32,12 @@ def hello():
     """Return a friendly HTTP greeting."""
     username = request.args.get('username')
     password = request.args.get('password')
+
     return 'Criando user= '+username+' pass='+password
+
+def saveUser(username,password):
+
+
 
 
 if __name__ == '__main__':

@@ -14,6 +14,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+#More info about datastore:
+#https://cloud.google.com/datastore/docs/concepts/entities
 
 def run_quickstart():
     # [START datastore_quickstart]
@@ -26,18 +28,19 @@ def run_quickstart():
     # The kind for the new entity
     kind = 'Usuario'
     # The name/ID for the new entity
-    name = 'usuario1'
+    name = 'fgm'
     # The Cloud Datastore key for the new entity
     task_key = datastore_client.key(kind, name)
 
     # Prepares the new entity
     task = datastore.Entity(key=task_key)
-    task['nome'] = 'Filipe Guelber'
+    task['nome'] = u'Filipe Guelber'
+    task['senha'] = u'1234'
 
     # Saves the entity
     datastore_client.put(task)
 
-    print('Saved {}: {}'.format(task.key.name, task['description']))
+    print('Saved {}: {}'.format(task.key.name, task['nome']))
     # [END datastore_quickstart]
 
 
