@@ -32,11 +32,12 @@ def hello():
     """Return a friendly HTTP greeting."""
     username = request.args.get('username')
     password = request.args.get('password')
+    saveUser(username,password)
 
     return 'Criando user= '+username+' pass='+password
 
 def saveUser(username,password):
-    return "deveria salvar"
+    print "deveria salvar",username," : ",password
 
 
 
