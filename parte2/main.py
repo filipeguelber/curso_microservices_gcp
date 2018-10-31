@@ -27,7 +27,7 @@ def hello():
     """Return a friendly HTTP greeting."""
     username = request.args.get('username')
     password = request.args.get('password')
-    return 'Hello World ! user= '+username+' pass='+password
+    return 'Criando user= '+username+' pass='+password
 
 
 if __name__ == '__main__':
