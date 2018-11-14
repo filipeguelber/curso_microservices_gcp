@@ -44,21 +44,11 @@ def publishUser(username,password):
     publisher = pubsub_v1.PublisherClient()
 
     # in the form `projects/{project_id}/topics/{topic_name}`
-    topic_path = subscriber.topic_path(project_id, topic_name)
-
-    # The `subscription_path` method creates a fully qualified identifier
-    # in the form `projects/{project_id}/subscriptions/{subscription_name}`
-    subscription_path = subscriber.subscription_path(
-        project_id, subscription_name)
+    topic_path = publisher.topic_path(project_id, topic_name)
 
     # Create the topic.
     topic = publisher.create_topic(topic_path)
     print('\nTopic created: {}'.format(topic.name))
-
-    # Create a subscription.
-    subscription = subscriber.create_subscription(
-        subscription_path, topic_path)
-    print('\nSubscription created: {}\n'.format(subscription.name))
 
     # Publish messages.
     data = {
