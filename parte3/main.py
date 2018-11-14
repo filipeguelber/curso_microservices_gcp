@@ -32,7 +32,7 @@ def hello():
     """Return a friendly HTTP greeting."""
     username = request.args.get('username')
     password = request.args.get('password')
-    saveUser(username,password)
+    publishUser(username,password)
 
     return 'Criando user= '+username+' pass='+password
 
