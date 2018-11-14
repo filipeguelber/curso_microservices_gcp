@@ -19,8 +19,6 @@ from google.cloud import pubsub_v1
 
 
 
-def create_client(project_id):
-    return datastore.Client(project_id)
 
 
 # If `entrypoint` is not defined in app.yaml, App Engine will look for an app
@@ -37,8 +35,6 @@ def hello():
 
     return 'Criando user= '+username+' pass='+password
 
-def saveUser(username,password):
-    print "deveria salvar",username," : ",password
 
 def publishUser(username,password):
     # Instantiates a publisher client
