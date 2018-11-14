@@ -40,6 +40,7 @@ def publishUser(username,password):
     # Instantiates a publisher client
     publisher = pubsub_v1.PublisherClient()
 
+    project_id = "piviii-2018-noite-filipe"
     # in the form `projects/{project_id}/topics/{topic_name}`
     topic_path = publisher.topic_path(project_id, topic_name)
 
