@@ -15,7 +15,8 @@
 # [START gae_python37_app]
 from flask import Flask
 from flask import request
-from google.cloud import datastore
+from google.cloud import pubsub_v1
+
 
 
 def create_client(project_id):
